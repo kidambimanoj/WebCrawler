@@ -1,6 +1,6 @@
-package com.manoj.mapper;
+package com.manoj.biz.mapper;
 
-import com.manoj.object.UrlContainer;
+import com.manoj.biz.object.UrlContainer;
 import org.apache.commons.validator.routines.UrlValidator;
 
 import java.util.Set;

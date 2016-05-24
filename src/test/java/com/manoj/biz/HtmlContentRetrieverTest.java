@@ -1,4 +1,4 @@
-package com.manoj;
+package com.manoj.biz;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.manoj;
+package com.manoj.biz;
 
 import com.google.common.collect.ArrayListMultimap;
 import com.google.common.collect.Maps;
@@ -53,26 +53,5 @@ public class WebCrawler {
       urlsQueue.addAll(urls);
     }
     return result;
-  }
-
-  public static void main(String[] args) {
-
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Enter the url: ");
-    String url = scanner.nextLine();
-    if (url == null || url.isEmpty()) {
-      System.err.println("URL is not provided");
-      return;
-    }
-
-    String word = scanner.nextLine();
-    if (word == null || word.isEmpty()) {
-      System.err.println("Word is not provided");
-      return;
-    }
-
-    WebCrawler crawler = new WebCrawler();
-    Multimap<String, String> result = crawler.crawlByBfs(url, word);
-    System.out.println(result);
   }
 }

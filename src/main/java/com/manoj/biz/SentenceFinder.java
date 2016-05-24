@@ -1,4 +1,4 @@
-package com.manoj;
+package com.manoj.biz;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Lists;

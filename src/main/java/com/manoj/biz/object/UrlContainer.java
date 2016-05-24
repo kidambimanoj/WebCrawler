@@ -1,4 +1,4 @@
-package com.manoj.object;
+package com.manoj.biz.object;
 
 /**
  * Created by MK033906 on 5/14/2016.

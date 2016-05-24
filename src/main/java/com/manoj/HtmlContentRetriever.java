@@ -45,7 +45,6 @@ public class HtmlContentRetriever {
             return Joiner.on(NEW_LINE).join(lines);
         } catch (IOException e) {
             System.err.println("Error connecting to URL: " + formattedUrl);
-//            throw new RuntimeException("Connection to URL: " + url + " failed with message: " + e.getMessage(), e);
         }
         return "";
     }

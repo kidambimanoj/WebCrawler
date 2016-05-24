@@ -20,8 +20,7 @@ public class WebCrawlerTest {
     public void testReadContent() {
         String url = "http://scm.powerchart.cerner.corp/svn/java/com.cerner.interop/branches/develop/";
         String word = "Manager";
-        webCrawler.crawlByBfs(url, word);
-        Multimap<String, String> result = webCrawler.getResult();
+        Multimap<String, String> result = webCrawler.crawlByBfs(url, word);
         System.out.println(result);
     }
 

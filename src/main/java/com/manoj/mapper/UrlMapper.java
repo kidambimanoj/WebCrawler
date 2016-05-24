@@ -1,12 +1,9 @@
-package com.manoj;
+package com.manoj.mapper;
 
 import com.manoj.object.UrlContainer;
 import org.apache.commons.validator.routines.UrlValidator;
 
-import javax.print.DocFlavor;
-import java.net.URL;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toSet;
 

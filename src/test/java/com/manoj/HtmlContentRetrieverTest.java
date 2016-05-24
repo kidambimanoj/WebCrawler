@@ -1,15 +1,10 @@
 package com.manoj;
 
-import com.googlecode.catchexception.CatchException;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.net.MalformedURLException;
-import java.net.UnknownHostException;
-
-import static org.hamcrest.Matchers.instanceOf;
-import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.isEmptyOrNullString;
+import static org.hamcrest.Matchers.not;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -36,19 +31,19 @@ public class HtmlContentRetrieverTest {
 
     @Test
     public void testReadContentWithDummyInput() {
-        CatchException.catchException(contentRetriever).readContent("hjhjhjk");
-        assertThat(CatchException.<RuntimeException>caughtException().getCause(), is(instanceOf(UnknownHostException.class)));
+        String content = contentRetriever.readContent("hjhjhjk");
+        assertThat(content, isEmptyOrNullString());
     }
 
     @Test
     public void testReadContentWithActualUrl() {
-        String content = contentRetriever.readContent("http://scm.powerchart.cerner.corp/");
-        System.out.println(content);
+        String content = contentRetriever.readContent("http://www.google.com");
+        assertThat(content, not(isEmptyOrNullString()));
     }
 
     @Test
     public void testReadContentWithActualUrlWithoutHeaders() {
-        String content = contentRetriever.readContent("scm.powerchart.cerner.corp/");
-        System.out.println(content);
+        String content = contentRetriever.readContent("www.google.com");
+        assertThat(content, not(isEmptyOrNullString()));
     }
 }

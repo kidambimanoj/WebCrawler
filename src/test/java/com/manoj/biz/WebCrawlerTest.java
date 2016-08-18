@@ -18,8 +18,8 @@ public class WebCrawlerTest {
 
     @Test
     public void testReadContent() {
-        String url = "http://scm.powerchart.cerner.corp/svn/java/com.cerner.interop/branches/develop/";
-        String word = "Manager";
+        String url = "http://repo.release.cerner.corp/main/site";
+        String word = "security-auditing";
         Multimap<String, String> result = webCrawler.crawlByBfs(url, word);
         System.out.println(result);
     }

@@ -46,4 +46,12 @@ public class HtmlContentRetrieverTest {
         String content = contentRetriever.readContent("www.google.com");
         assertThat(content, not(isEmptyOrNullString()));
     }
+
+    @Test
+    public void testReadContentWithStockData() {
+        final String content =
+            contentRetriever.readContent("https://in.finance.yahoo.com/q/p?s=AAPL");
+        System.out.println(content);
+
+    }
 }

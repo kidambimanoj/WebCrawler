@@ -19,41 +19,41 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class HtmlContentRetriever {
 
-    private static final String NEW_LINE = "\n";
+  private static final String NEW_LINE = "\n";
 
-    /**
-     * Reads the html content
-     *
-     * @param url - the url path
-     * @return the html content as String.
-     */
-    public String readContent(String url) {
-        checkNotNull(url, "url cannot be null or empty");
-        checkArgument(!url.trim().isEmpty(), "url cannot be empty");
+  /**
+   * Reads the html content
+   *
+   * @param url - the url path
+   * @return the html content as String.
+   */
+  public String readContent(String url) {
+    checkNotNull(url, "url cannot be null or empty");
+    checkArgument(!url.trim().isEmpty(), "url cannot be empty");
 
-        String formattedUrl = formatUrl(url);
+    String formattedUrl = formatUrl(url);
 
-        try {
-            URL oracle = new URL(formattedUrl);
-            BufferedReader in = new BufferedReader(new InputStreamReader(oracle.openStream()));
+    try {
+      URL oracle = new URL(formattedUrl);
+      BufferedReader in = new BufferedReader(new InputStreamReader(oracle.openStream()));
 
-            List<String> lines = new ArrayList<>();
-            for (String inputLine; (inputLine = in.readLine()) != null; ) {
-                lines.add(inputLine);
-            }
-            in.close();
-            return Joiner.on(NEW_LINE).join(lines);
-        } catch (IOException e) {
-            System.err.println("Error connecting to URL: " + formattedUrl);
-        }
-        return "";
+      List<String> lines = new ArrayList<>();
+      for (String inputLine; (inputLine = in.readLine()) != null; ) {
+        lines.add(inputLine);
+      }
+      in.close();
+      return Joiner.on(NEW_LINE).join(lines);
+    } catch (IOException e) {
+      System.err.println("Error connecting to URL: " + formattedUrl);
     }
+    return "";
+  }
 
-    private String formatUrl(String url) {
-        String newUrl = url.trim();
-        if(newUrl.startsWith("http://")) {
-            return newUrl;
-        }
-        return "http://" + newUrl;
+  private String formatUrl(String url) {
+    String newUrl = url.trim();
+    if (newUrl.startsWith("http://") || newUrl.startsWith("https://")) {
+      return newUrl;
     }
+    return "http://" + newUrl;
+  }
 }

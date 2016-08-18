@@ -6,7 +6,8 @@
     <groupId>com.manoj</groupId>
     <artifactId>Web-Crawler</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <description>A Web crawler that crawls through the URL provided for the string and presents the results
+    <description>A Web crawler that crawls through the URL provided for the string and presents the
+        results
     </description>
 
     <developers>
@@ -16,7 +17,17 @@
         </developer>
     </developers>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.3.6.RELEASE</version>
+    </parent>
     <dependencies>
+        <!--Spring Boot dependencies-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
         <!-- Guava -->
         <dependency>
@@ -32,7 +43,15 @@
             <version>1.4.0</version>
         </dependency>
 
+
         <!-- Test Dependencies-->
+        <!-- Spring Unit-Testing-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
